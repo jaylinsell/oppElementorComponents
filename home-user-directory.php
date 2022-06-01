@@ -11,7 +11,7 @@ class HomeUserDirectory extends Widget_Base {
   }
 
   public function get_icon() {
-    return 'fa fa-map-signs';
+    return 'eicon-archive';
   }
 
   public function get_categories() {
