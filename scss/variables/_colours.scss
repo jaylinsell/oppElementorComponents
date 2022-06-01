@@ -1,0 +1,24 @@
+:root {
+  // Shades
+  --color-black: #4C4B4E; // Not "rich black", to help soften the site
+  --color-white: #FFFFFF;
+  --color-grey-lightest: #E3E2E3;
+  --color-grey-dark: #2A2A2A;
+
+  // primary colours
+  --color-primary: #0A4875;
+  --color-primary-light: #386C94;
+  --color-secondary: #55B6B2;
+
+  // secondary colours
+
+  // common elements
+  --color-border: var(--color-grey-lightest);
+
+  // fonts
+  --color-text: var(--color-grey-dark);
+  --color-text-heading: var(--color-black);
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-secondary);
+  --color-link-visited: var(--color-primary-light);
+}

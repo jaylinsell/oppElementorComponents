@@ -1,0 +1,41 @@
+/**
+* ! The current theme also utilises .btn classes - so to avoid major conflicts,
+* ! these styles work just on modifiers to adjust add additional variations of the buttons where needed
+*/
+:root {
+  --btn-icon-bg: var(--color-primary);
+  --btn-icon-color: var(--color-white);
+}
+
+// Due to the theme styles, we need to increase specifity to override the default button styles, so the following isn't as clean as I'd like...
+.btn.btn {
+  &--primary,
+  &--secondary {
+    // purposely left without fallbacks so they inherit the themes colours
+    background: var(--btn-bg);
+    color: var(--btn-color);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    text-transform: revert;
+    font-family: var(--font-primary);
+    font-weight: var(--font-medium);
+
+    .chevron {
+      @include size(1.25em);
+      display: block;
+      background: var(--btn-icon-bg);
+      fill: var(--btn-icon-color);
+      border-radius: 100%;
+      padding: 0.1em;
+      transform: translateX(0em);
+      transition: 0.15s var(--ease-out);
+    }
+
+    &:hover .chevron {
+      transform: translateX(0.2em);
+    }
+  }
+}

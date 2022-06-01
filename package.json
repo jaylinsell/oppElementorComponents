@@ -1,0 +1,16 @@
+{
+  "name": "opp-components",
+  "version": "1.0.0",
+  "description": "Not using to compile, just got sick of importing all the SCSS files.",
+  "main": "index.js",
+  "scripts": {
+    "new": "cross-env HYGEN_TMPLS=generators hygen new"
+  },
+  "keywords": [],
+  "author": "Jay Linsell",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "hygen": "^6.2.3"
+  }
+}

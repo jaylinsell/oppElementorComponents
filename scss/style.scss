@@ -1,0 +1,60 @@
+/*!
+Theme Name: Webion
+Theme URI: https://www.templatemonster.com/vendors/zemez
+Author: Zemez
+Author URI: https://zemez.io/
+Description: Webion theme.
+Template: kava
+Version: 1.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: webion
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+DocumentationID: webion
+Template Id: prod-15696
+*/
+
+// ! Don't remove the "..additional { folder }" comments, these are for my generators.
+
+/*
+# Mixins
+================================================== */
+@import 'mixins/breakpoints';
+@import 'mixins/size';
+// ! ...additional mixins
+
+/*
+# Variables
+================================================== */
+@import 'variables/colours';
+@import 'variables/effects';
+@import 'variables/spacing';
+// ! ...additional variables
+
+/*
+# Scaffold
+================================================== */
+@import 'scaffold/fonts';
+@import 'scaffold/buttons';
+// ! ...additional scaffold
+
+/*
+# Components
+================================================== */
+@import 'components/cards';
+// ! ...additional components
+
+/*
+# Inherited theme overrides
+================================================== */
+
+#toTop {
+	cursor: pointer;
+}
+
+html body select.orderby {
+    width: 210px;
+    margin-bottom: 10px;
+}
+
+

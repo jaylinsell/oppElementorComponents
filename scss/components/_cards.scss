@@ -1,0 +1,81 @@
+:root {
+  --card-bg: var(--color-white);
+  --card-color: var(--color-text);
+  --card-border-color: var(--color-border);
+  --card-radius: var(--radius);
+}
+
+%sectionBreak {
+  margin-top: var(--space-md);
+  padding-top: var(--space-lg);
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 3.75rem;
+    height: 5px;
+    background: var(--color-secondary);
+    position: absolute;
+    top: 0;
+  }
+}
+
+.card {
+  color: var(--card-color);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--card-radius);
+  padding: var(--space-md);
+
+  :is(h1, h2, h3, h4, h5, h6, p, span, li) { color: currentColor; }
+
+  &__grid {
+    @include breakpoint(xs) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: var(--space-md);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__summary {
+    margin-top: var(--space-sm);
+  }
+
+  &--directory {
+    --card-bg: var(--color-primary-light);
+    --card-color: var(--color-white);
+    --btn-bg: var(--color-white);
+    --btn-color: var(--color-primary);
+
+    border: none;
+
+    &:nth-child(even) { --card-bg: var(--color-primary); }
+
+    .btn--primary:hover {
+      // todo fix hover styles
+    }
+  }
+
+  &__links {
+    @extend %sectionBreak;
+
+    @include breakpoint(xs) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(7.5rem, 1fr));
+      grid-gap: var(--space-md);
+    }
+  }
+}
+
