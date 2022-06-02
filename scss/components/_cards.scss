@@ -2,7 +2,10 @@
   --card-bg: var(--color-white);
   --card-color: var(--color-text);
   --card-border-color: var(--color-border);
+  --card-padding: var(--space-md) var(--space-lg) var(--space-lg);
   --card-radius: var(--radius);
+  --card-icon-size: 2em;
+  --card-title-size: 1.5em;
 }
 
 %sectionBreak {
@@ -26,7 +29,7 @@
   background-color: var(--card-bg);
   border: 1px solid var(--card-border-color);
   border-radius: var(--card-radius);
-  padding: var(--space-md);
+  padding: var(--card-padding);
 
   :is(h1, h2, h3, h4, h5, h6, p, span, li) { color: currentColor; }
 
@@ -41,11 +44,22 @@
   &__header {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-end;
     gap: var(--space-md);
   }
 
+  &__icon {
+    display: flex;
+    font-size: var(--card-icon-size);
+    width: 1em;
+    height: auto;
+  }
+
   &__title {
+    font-size: var(--card-title-size);
+    font-weight: var(--font-medium);
+    line-height: 1.2;
+    margin-top: 0;
     margin-bottom: 0;
   }
 
@@ -56,6 +70,8 @@
   &--directory {
     --card-bg: var(--color-primary-light);
     --card-color: var(--color-white);
+    --card-icon-size: 5em;
+    --card-title-size: 2.25em;
     --btn-bg: var(--color-white);
     --btn-color: var(--color-primary);
 
@@ -63,18 +79,26 @@
 
     &:nth-child(even) { --card-bg: var(--color-primary); }
 
+    .btn {
+      width: 100%;
+    }
+
     .btn--primary:hover {
       // todo fix hover styles
     }
   }
 
+  &--alternate {
+    --card-bg: var(--color-primary);
+  }
+
   &__links {
     @extend %sectionBreak;
+    display: grid;
+    grid-gap: var(--space-md);
 
     @include breakpoint(xs) {
-      display: grid;
       grid-template-columns: repeat(2, minmax(7.5rem, 1fr));
-      grid-gap: var(--space-md);
     }
   }
 }

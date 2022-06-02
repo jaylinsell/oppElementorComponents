@@ -38,4 +38,9 @@
       transform: translateX(0.2em);
     }
   }
+
+  &--large {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
 }
