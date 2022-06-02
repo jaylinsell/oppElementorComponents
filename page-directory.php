@@ -138,9 +138,7 @@ class PageDirectory extends Widget_Base {
                 </svg>
               </a>
 
-              <section class="card__summary">
-                ' . $description . '
-              </section>
+              <section class="card__summary">' .$description. '</section>
             </header>';
 
     if ( $settings['links'] ) {
