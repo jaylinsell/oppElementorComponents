@@ -11,6 +11,8 @@
   --space-xxl: calc(5.25 * var(--space-unit));
   --space-xxxl: calc(8.5 * var(--space-unit));
 
+  --measure: 75ch;
+
   @include breakpoint(md, 'not all') {
     --space-unit: 0.8em;
   }

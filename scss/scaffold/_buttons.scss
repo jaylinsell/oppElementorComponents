@@ -7,6 +7,12 @@
   --btn-icon-color: var(--color-white);
 }
 
+%chevronGrid {
+  display: inline-grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, min-content);
+  grid-gap: var(--space-sm);
+}
+
 // Due to the theme styles, we need to increase specifity to override the default button styles, so the following isn't as clean as I'd like...
 .btn.btn {
   &--primary,
@@ -15,9 +21,7 @@
     background: var(--btn-bg);
     color: var(--btn-color);
 
-    display: inline-grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, min-content);
-    grid-gap: var(--space-sm);
+    @extend %chevronGrid;
     text-align: left;
     white-space: normal;
     align-items: center;

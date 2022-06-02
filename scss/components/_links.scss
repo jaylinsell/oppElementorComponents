@@ -1,11 +1,39 @@
 :root {
-
+  --link-grid: repeat(auto-fit, minmax(240px, 1fr));
+  --link-gap-h: var(--space-md);
+  --link-gap-v: var(--space-md);
 }
 
 .links {
-  &--grid {
+  &--grid,
+  &--list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    grid-gap: var(--space-md);
+    grid-gap: var(--link-gap-v) var(--link-gap-h);
+    grid-template-columns: var(--link-grid);
+  }
+
+  &--list {
+    --link-grid: 1fr;
+    --link-gap-v: var(--space-sm);
+    --link-gap-h: var(--space-lg);
+    max-width: var(--measure);
+
+    a {
+      @extend %chevronGrid; // _buttons.scss
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: var(--space-sm);
+
+      &:last-child { border-bottom: none; }
+
+      @include breakpoint (sm) {
+        &:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+      }
+    }
+
+    svg {
+      * { fill: currentColor; }
+    }
+
+    @include breakpoint(sm) { --link-grid: minmax(0, 1fr) minmax(0, 1fr); }
   }
 }

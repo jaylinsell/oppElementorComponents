@@ -5,7 +5,12 @@
   --card-padding: var(--space-md) var(--space-lg) var(--space-lg);
   --card-radius: var(--radius);
   --card-icon-size: 2em;
-  --card-title-size: 1.5em;
+  --card-title-size: 1.25em;
+  --card-link-columns: 1fr;
+  --card-link-gap: var(--space-sm);
+  --card-header-alignment: center;
+
+  --divider-width: 3.75rem;
 }
 
 %sectionBreak {
@@ -16,7 +21,7 @@
   &::before {
     content: "";
     display: block;
-    width: 3.75rem;
+    width: var(--divider-width);
     height: 5px;
     background: var(--color-secondary);
     position: absolute;
@@ -25,6 +30,8 @@
 }
 
 .card {
+  $this: #{&};
+
   color: var(--card-color);
   background-color: var(--card-bg);
   border: 1px solid var(--card-border-color);
@@ -44,8 +51,30 @@
   &__header {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: var(--card-header-alignment);
     gap: var(--space-md);
+
+    &, & > a { width: 100%; }
+
+    > section {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    > a {
+      display: grid;
+      grid-template-columns: minmax(0, min-content) minmax(0, 1fr) minmax(0, min-content);
+      align-items: center;
+      grid-gap: var(--space-md);
+
+      #{$this}__icon { color: var(--color-secondary); }
+
+      .chevron {
+        background: var(--color-primary);
+        border-radius: 100%;
+        margin-left: auto;
+      }
+    }
   }
 
   &__icon {
@@ -67,11 +96,31 @@
     margin-top: var(--space-sm);
   }
 
+
+  &__links {
+    @extend %sectionBreak;
+    display: grid;
+    grid-gap: var(--card-link-gap);
+
+    @include breakpoint(xs) {
+      grid-template-columns: var(--card-link-columns);
+    }
+  }
+
+  /*
+  * Modifiers
+  */
+
+  // home directory cards
   &--directory {
     --card-bg: var(--color-primary-light);
     --card-color: var(--color-white);
     --card-icon-size: 5em;
     --card-title-size: 2.25em;
+    --card-link-columns: repeat(2, minmax(7.5rem, 1fr));
+    --card-link-gap: var(--space-md);
+    --card-header-alignment: flex-end;
+
     --btn-bg: var(--color-white);
     --btn-color: var(--color-primary);
 
@@ -88,17 +137,45 @@
     }
   }
 
+  // alternating bg for home cards
   &--alternate {
     --card-bg: var(--color-primary);
   }
 
-  &__links {
-    @extend %sectionBreak;
-    display: grid;
-    grid-gap: var(--space-md);
+  // page directory cards
+  &--page-directory {
+    --divider-width: 1.875rem;
 
-    @include breakpoint(xs) {
-      grid-template-columns: repeat(2, minmax(7.5rem, 1fr));
+    /*
+    * because the SVGs are imported as images, I can't tell the svg to inherit the colour, so instead -
+    * I emulate the svg with a mask, and control the colour I want using the background of the psuedo element
+    */
+    #{$this}__icon {
+      position: relative;
+
+      &:before {
+        @include size(100%);
+        content: "";
+        display: block;
+        position: absolute;
+        opacity: var(--c-psuedo-opacity, 0);
+        background: var(--color-secondary);
+        mask-image: var(--image-url);
+      }
+    }
+
+    #{$this}__links a {
+      @extend %chevronGrid; // _buttons.scss
+
+      font-weight: var(--font-regular);
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: var(--space-sm);
+
+      &:last-child { border-bottom: none; }
+
+      svg {
+        * { fill: currentColor; }
+      }
     }
   }
 }

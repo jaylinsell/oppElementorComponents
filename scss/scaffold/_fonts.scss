@@ -85,6 +85,8 @@ a {
 
   &:visited { color: var(--color-link-visited); }
   &:hover { color: var(--color-link-hover); }
+
+  :is(h1, h2, h3, h4, h5, h6) { color: currentColor; }
 }
 
 .link {
@@ -138,7 +140,8 @@ strong { font-weight: var(--font-bold); }
   ol{ margin-bottom: var(--space-lg); }
   p {
     margin-bottom: var(--space-md);
-    max-width: 75ch;
+    max-width: var(--measure)
+    ;
   }
 
   ul { list-style: disc; }
