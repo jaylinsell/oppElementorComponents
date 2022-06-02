@@ -141,7 +141,7 @@ class HomeUserDirectory extends Widget_Base {
               <h2 class="card__title">' . $title . '</h2>
             </header>
             <section class="card__summary">
-              <p>' . $description . '</p>
+              ' . $description . '
             </section>';
 
     if ( $settings['links'] ) {

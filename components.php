@@ -13,11 +13,13 @@
     // register individual components within the directory
     protected function __construct () {
       require_once('home-user-directory.php');
+      require_once('button-list.php');
       add_action('elementor/widgets/widgets_registered', array($this, 'register_widgets'));
     }
 
     public function register_widgets() {
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\HomeUserDirectory() );
+      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\ButtonList() );
     }
   }
 

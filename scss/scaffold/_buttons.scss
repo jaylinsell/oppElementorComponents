@@ -15,10 +15,15 @@
     background: var(--btn-bg);
     color: var(--btn-color);
 
-    display: inline-flex;
+    display: inline-grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, min-content);
+    grid-gap: var(--space-sm);
+    text-align: left;
+    white-space: normal;
     align-items: center;
     justify-content: space-between;
     font-size: 1rem;
+    line-height: 1.2;
     text-transform: revert;
     font-family: var(--font-primary);
     font-weight: var(--font-medium);
@@ -39,8 +44,12 @@
     }
   }
 
+  &--secondary {
+    --btn-bg: var(--color-secondary-lightest);
+    --btn-color: var(--color-primary);
+  }
+
   &--large {
-    padding-top: var(--space-md);
-    padding-bottom: var(--space-md);
+    min-height: 3.75em;
   }
 }
