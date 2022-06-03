@@ -1,9 +1,10 @@
 {
   "name": "opp-components",
   "version": "1.0.0",
-  "description": "Not using to compile, just got sick of importing all the SCSS files.",
-  "main": "index.js",
+  "description": "Custom OPP components for use in Elementor",
   "scripts": {
+    "dev": "parcel watch",
+    "build": "parcel build",
     "new": "cross-env HYGEN_TMPLS=generators hygen new"
   },
   "keywords": [],
@@ -12,5 +13,24 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "hygen": "^6.2.3"
-  }
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0"
+  },
+  "source": [
+    "js/index.js",
+    "scss/style.scss"
+  ],
+  "targets": {
+    "default": {
+      "distDir": "../"
+    }
+  },
+  "@parcel/transformer-css": {
+    "cssModules": {
+      "dashedIdents": true
+    }
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
