@@ -11,6 +11,9 @@
   display: inline-grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, min-content);
   grid-gap: var(--space-sm);
+
+  .chevron { transition: transform 0.15s var(--ease-out); }
+  &:hover .chevron { transform: translateX(0.1em); }
 }
 
 // Due to the theme styles, we need to increase specifity to override the default button styles, so the following isn't as clean as I'd like...
@@ -49,8 +52,9 @@
   }
 
   &--secondary {
-    --btn-bg: var(--color-secondary-lightest);
+    --btn-bg: var(--color-white);
     --btn-color: var(--color-primary);
+    border: 1px solid var(--color-border);
   }
 
   &--large {

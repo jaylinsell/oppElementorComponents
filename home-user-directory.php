@@ -63,7 +63,8 @@ class HomeUserDirectory extends Widget_Base {
         'label_on' => __( 'On', 'your-plugin' ),
 				'label_off' => __( 'Off', 'your-plugin' ),
         'return_value' => 'yes',
-        'default_value' => 'no'
+        'default_value' => 'no',
+        'description' => __( 'Alternates the background colours. Only applies to desktop due to stacking orders on mobile.', 'elementor' ),
       ]
     );
 

@@ -8,6 +8,7 @@
   // primary colours
   --color-primary: #0A4875;
   --color-primary-light: #386C94;
+  --color-primary-lightest: #B6BACC;
   --color-secondary: #55B6B2;
   --color-secondary-lightest: #E6F4F4;
 
@@ -20,6 +21,6 @@
   --color-text: var(--color-grey-dark);
   --color-text-heading: var(--color-black);
   --color-link: var(--color-primary);
-  --color-link-hover: var(--color-secondary);
+  --color-link-hover: var(--color-primary-lightest);
   --color-link-visited: var(--color-primary-light);
 }
