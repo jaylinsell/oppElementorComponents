@@ -1,0 +1,33 @@
+:root {}
+
+.anchor {
+  &__block {
+    display: block;
+    background: var(--anchor-bg); // controlled directly on the element
+    transform: translateY(var(--translatePosition, 0));
+    will-change: transform;
+
+    @include breakpoint(sm) {
+      max-width: calc(100% - var(--space-lg));
+    }
+  }
+
+  &__header {
+    h2 {
+      margin-top: 0;
+      font-size: 1.25em;
+    }
+  }
+
+  &__nav {
+    --divider-width:  1.875em;
+    @extend %sectionBreak;
+  }
+
+  &__link {
+    &--child { padding-left: var(--space-md); }
+    &--active {
+      color: var(--color-black);
+    }
+  }
+}
