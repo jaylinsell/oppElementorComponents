@@ -63,6 +63,11 @@
   &--primary {
     --btn-bg: var(--color-primary);
     --btn-color: var(--color-white);
+
+    .card--directory & {
+      --btn-bg: revert;
+      --btn-color: revert;
+    }
   }
 
   &--secondary {
