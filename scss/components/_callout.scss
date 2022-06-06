@@ -1,0 +1,45 @@
+:root {
+  --callout-bg: none;
+}
+
+.callout {
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--callout-bg);
+  margin: var(--space-sm) 0;
+
+  &--dashed {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23E6F4F4FF' stroke-width='8' stroke-dasharray='16%2c 16' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+  }
+
+  &--success { --callout-bg: var(--color-secondary-lightest); }
+  &--warning { --callout-bg: var(--color-warning); }
+  &--danger { --callout-bg: var(--color-error); }
+  &--grey { --callout-bg: var(--color-grey-lightest); }
+
+  .btn--download {
+    margin-bottom: var(--space-lg);
+  }
+
+  &__content {
+    &:empty { display: none; }
+  }
+
+  .links {
+    margin-top: var(--space-md);
+
+    --link-grid: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+    @include breakpoint(md2, 'not all') {
+      @include lastRow(3) { border-bottom: none; }
+    }
+
+    @include breakpoint(md2) {
+      --link-grid: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+      a {
+        @include lastRow(3) { border-bottom: none; }
+      }
+    }
+  }
+}

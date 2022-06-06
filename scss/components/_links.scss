@@ -25,18 +25,23 @@
       font-weight: var(--font-medium);
 
       &:last-child { border-bottom: none; }
-
-      @include breakpoint (sm) {
-        &:nth-last-child(2):nth-child(odd) { border-bottom: none; }
-      }
+      &:hover .chevron--down { transform: translateY(0.1em) rotate(90deg); }
     }
 
     svg {
       * { fill: currentColor; }
     }
 
-    @include breakpoint(sm) {
-      &:not(.anchor__nav) { --link-grid: minmax(0, 1fr) minmax(0, 1fr); }
+    .chevron--down {
+      transform: translateY(0) rotate(90deg);
+      border-right: 1px solid;
+      border-radius: 25%;
+    }
+  }
+
+  &--list:not(.links--grid-auto):not(.anchor__nav) a {
+    @include breakpoint (sm) {
+      &:nth-last-child(2):nth-child(odd) { border-bottom: none; }
     }
   }
 }

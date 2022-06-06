@@ -21,6 +21,7 @@ Template Id: prod-15696
 ================================================== */
 @import 'mixins/breakpoints';
 @import 'mixins/size';
+@import 'mixins/last-row';
 // ! ...additional mixins
 
 /*
@@ -45,6 +46,7 @@ Template Id: prod-15696
 @import 'components/links';
 @import 'components/anchor';
 @import 'components/sticky';
+@import 'components/callout';
 // ! ...additional components
 
 /*

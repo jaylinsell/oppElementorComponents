@@ -2,7 +2,11 @@
 
 // fixes for elementor
 .elementor-widget-on-this-page {
-  &, .elementor-widget-container { height: 100%; }
+  &, .elementor-widget-container {
+    height: 100%;
+
+    .elementor-edit-mode & { height: initial; }
+  }
 }
 
 // actual styles
@@ -19,7 +23,6 @@
     &--alternate {
       --anchor-bg: var(--color-secondary-lightest);
       padding: var(--space-md);
-
     }
   }
 

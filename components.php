@@ -17,6 +17,8 @@
       require_once('button-list.php');
       require_once('link-list.php');
       require_once('on-this-page.php');
+      require_once('callout.php');
+      require_once('callout-download.php');
 
       add_action('elementor/widgets/widgets_registered', array($this, 'register_widgets'));
     }
@@ -27,6 +29,8 @@
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\ButtonList() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\LinkList() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\OnThisPage() );
+      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\CalloutGeneric() );
+      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\CalloutDownloadBrochure() );
     }
   }
 

@@ -2,7 +2,8 @@
   // Shades
   --color-black: #4C4B4E; // Not "rich black", to help soften the site
   --color-white: #FFFFFF;
-  --color-grey-lightest: #E3E2E3;
+  --color-grey-lighter: #E3E2E3;
+  --color-grey-lightest: #f2f2f2;
   --color-grey-dark: #2A2A2A;
 
   // primary colours
@@ -13,9 +14,12 @@
   --color-secondary-lightest: #E6F4F4;
 
   // secondary colours
+  --color-success: var(--color-secondary-lightest);
+  --color-warning: #FDF4EC;
+  --color-error: #F0E0DD;
 
   // common elements
-  --color-border: var(--color-grey-lightest);
+  --color-border: var(--color-grey-lighter);
 
   // fonts
   --color-text: var(--color-grey-dark);

@@ -1,0 +1,6 @@
+@mixin lastRow($count: 1) {
+  &:nth-child(#{$count}n + 1):nth-last-child(-n + #{$count}),
+  &:nth-child(#{$count}n + 1):nth-last-child(-n + #{$count}) ~ & {
+    @content;
+  }
+}
