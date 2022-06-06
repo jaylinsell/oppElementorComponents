@@ -1,14 +1,25 @@
 :root {}
 
+// fixes for elementor
+.elementor-widget-on-this-page {
+  &, .elementor-widget-container { height: 100%; }
+}
+
+// actual styles
 .anchor {
   &__block {
     display: block;
     background: var(--anchor-bg); // controlled directly on the element
-    transform: translateY(var(--translatePosition, 0));
-    will-change: transform;
+    border-radius: var(--radius-md);
 
     @include breakpoint(sm) {
       max-width: calc(100% - var(--space-lg));
+    }
+
+    &--alternate {
+      --anchor-bg: var(--color-secondary-lightest);
+      padding: var(--space-md);
+
     }
   }
 

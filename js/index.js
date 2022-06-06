@@ -6,6 +6,7 @@ const initAnchors = (_anchorNav) => {
   const anchors = domElements.anchorNav.querySelectorAll('a')
 
   updateAnchorAccessability(anchors)
+  wrapAllPageAnchorBlocks()
 
   window.addEventListener('scroll', () => handleScroll(anchors))
   handleScroll(anchors)
@@ -26,9 +27,27 @@ const updateAnchorAccessability = anchors => {
   }
 }
 
+const wrapAllPageAnchorBlocks = () => {
+  /*
+  * To utilise position sticky, we need a parent element of 100% height. The way Elementor adds the elements into it's own wrapper,
+  * doing this only in CSS means if there was a secondary anchor block used for sub pages, it'd be pushed out of the bottom
+  * of the content. To get around this, we add an extra wrapping element to all the elementor-widgeton-this-page blocks.
+  */
+
+  // Elementor uses a generic class, so we need the anchor block element first
+  const pageAnchorBlock = document.querySelector('.elementor-widget-on-this-page')
+  const wrappingElementorElement = pageAnchorBlock?.closest('.elementor-widget-wrap')
+
+  if (!wrappingElementorElement) return
+
+  const newWrapper = `<div class="sticky-wrapper">${wrappingElementorElement.innerHTML}</div>`
+  wrappingElementorElement.style.height = '100%'
+
+  wrappingElementorElement.innerHTML = newWrapper
+}
+
 const handleScroll = _anchors => {
   updateActiveAnchor(_anchors)
-  updateAnchorPositionValue()
 }
 
 const updateActiveAnchor = anchors => {
@@ -49,7 +68,7 @@ const updateActiveAnchor = anchors => {
   for (heading of headings) {
     const { y: headingY } = heading.getBoundingClientRect()
     const offsetPadding = 50
-    const withinHitArea = headingY < window.innerHeight * 0.5 && headingY < window.scrollY + offsetPadding
+    const withinHitArea = headingY < window.innerHeight * 0.25 && headingY < window.scrollY + offsetPadding
 
     if (withinHitArea) {
       // clear all the active classes
@@ -64,19 +83,6 @@ const updateActiveAnchor = anchors => {
     }
   }
 }
-
-const updateAnchorPositionValue = () => {
-  const { anchorNav } = domElements
-  const { y } = anchorNav.getBoundingClientRect()
-  const offsetPadding = 100
-  const isInScreen = y < window.innerHeight
-
-  if (isInScreen) {
-    const pos = y < offsetPadding ? `${Math.abs(y) + offsetPadding}` : 0
-    anchorNav.style.setProperty('--translatePosition', `${pos}px`)
-  }
-}
-
 
 window.addEventListener('DOMContentLoaded', () => {
   const pageAnchorNav = document.querySelector('.anchor__block')

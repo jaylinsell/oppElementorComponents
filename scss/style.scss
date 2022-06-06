@@ -44,6 +44,7 @@ Template Id: prod-15696
 @import 'components/cards';
 @import 'components/links';
 @import 'components/anchor';
+@import 'components/sticky';
 // ! ...additional components
 
 /*
@@ -59,4 +60,6 @@ html body select.orderby {
     margin-bottom: 10px;
 }
 
-
+// # Additional overrides
+// Remove overflow so we can utilise position sticky.
+body .site { overflow: initial; }

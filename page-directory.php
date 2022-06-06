@@ -11,7 +11,7 @@ class PageDirectory extends Widget_Base {
   }
 
   public function get_icon() {
-    return 'eicon-table-of-contents';
+    return 'eicon-post-navigation';
   }
 
   public function get_categories() {

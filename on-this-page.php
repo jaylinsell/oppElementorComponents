@@ -15,7 +15,7 @@ class OnThisPage extends Widget_Base {
   }
 
   public function get_icon() {
-    return 'eicon-post-navigation';
+    return 'eicon-table-of-contents';
   }
 
   public function get_categories() {
@@ -108,9 +108,9 @@ class OnThisPage extends Widget_Base {
     $title = $settings['title'];
     $toggleBG = $settings['toggle_bg'];
 
-    $bg = $toggleBG ? 'var(--color-secondary-lightest)' : 'none';
+    $alternateClass = $toggleBG ? ' anchor__block--alternate' : '';
 
-    echo '<article class="anchor__block" style="--anchor-bg: ' . $bg . ';">
+    echo '<article class="anchor__block' . $alternateClass . '">
             <header class="anchor__header">
               <h2 class="anchor__title">' . $title . '</h2>
             </header>';

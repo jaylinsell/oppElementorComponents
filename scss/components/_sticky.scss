@@ -1,0 +1,7 @@
+.sticky-wrapper {
+  width: 100%;
+  position: sticky;
+  top: 50px;
+
+  > [class^=elementor-] { height: auto; }
+}
