@@ -29,7 +29,7 @@ class CalloutGeneric extends Widget_Base {
     $this->add_control(
 			'type',
 			[
-				'label' => __( 'Border Style', 'plugin-name' ),
+				'label' => __( 'Callout Style', 'plugin-name' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'solid',
 				'options' => [
