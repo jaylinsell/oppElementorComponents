@@ -15,10 +15,12 @@
       require_once('home-user-directory.php');
       require_once('page-directory.php');
       require_once('button-list.php');
+      require_once('logo-buttons.php');
       require_once('link-list.php');
       require_once('on-this-page.php');
       require_once('callout.php');
       require_once('callout-download.php');
+      require_once('opp-divider.php');
 
       add_action('elementor/widgets/widgets_registered', array($this, 'register_widgets'));
     }
@@ -27,10 +29,12 @@
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\HomeUserDirectory() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\PageDirectory() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\ButtonList() );
+      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\LogoButtons() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\LinkList() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\OnThisPage() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\CalloutGeneric() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\CalloutDownloadBrochure() );
+      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\OPPDivider() );
     }
   }
 

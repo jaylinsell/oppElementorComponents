@@ -18,6 +18,9 @@
     --link-gap-h: var(--space-lg);
     max-width: var(--measure);
 
+
+    .section-links & { --link-grid: repeat(auto-fit, minmax(240px, 1fr)); }
+
     a {
       @extend %chevronGrid; // _buttons.scss
       border-bottom: 1px solid var(--color-border);

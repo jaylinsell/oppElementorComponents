@@ -38,7 +38,7 @@ class CalloutDownloadBrochure extends Widget_Base {
     $this->add_control(
 			'file',
 			[
-				'label' => esc_html__( 'Choose PDF', 'plugin-name' ),
+				'label' => __( 'Choose PDF', 'plugin-name' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
         'media_type' => 'application/pdf'
 			]

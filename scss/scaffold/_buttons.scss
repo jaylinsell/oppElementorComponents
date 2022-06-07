@@ -14,6 +14,11 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, min-content);
   grid-gap: var(--space-sm);
 
+  .elementor-widget-button-list & {
+    grid-template-columns: minmax(0, min-content) minmax(0, 1fr) minmax(0, min-content);
+    grid-gap:0;
+  }
+
   .chevron { transition: transform 0.15s var(--ease-out); }
   &:hover .chevron { transform: translateX(0.1em); }
 }
@@ -59,11 +64,27 @@
 
     &:hover {
       --btn-color: var(--color-primary);
+      // need to reinforce the color due to the themes css inheritence 🤦‍♂️
       color: var(--btn-color);
 
       .chevron {
         transform: translate(var(--chevron-translate)) rotate(var(--chevron-rotation));
       }
+    }
+
+    .btn__icon {
+      > * {
+        $size: 2.2em;
+        @include size($size);
+        margin-right: var(--space-sm);
+        max-width: $size;
+
+      }
+      i:empty { display: none; }
+    }
+
+    .elementor-widget-button-list & {
+      .chevron { margin-left: var(--space-sm); }
     }
   }
 
@@ -85,5 +106,20 @@
 
   &--large {
     min-height: 3.75em;
+  }
+
+  &--logo {
+    background: var(--color-white);
+    img {
+      width: auto;
+      height: auto;
+      max-height: 5em;
+      max-width: 300px;
+    }
+
+    &:hover {
+      background: var(--color-white);
+      opacity: 0.5;
+    }
   }
 }

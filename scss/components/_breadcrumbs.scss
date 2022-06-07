@@ -1,0 +1,37 @@
+// Styles are overrides to the existing jet breadcrumbs
+
+.jet-breadcrumbs__item{
+  * { font-family: var(--font-secondary); }
+
+  &:first-child a{
+    position: relative;
+    text-indent: -9999px;
+
+    &, &::before {
+      @include size(1.8rem);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background: url('../svgs/home.svg') no-repeat center center;
+    }
+
+    &:hover { opacity: 0.7; }
+  }
+
+  &:not(:first-child) a {
+    color: var(--color-primary-lightest);
+    &:hover { color: var(--color-primary); }
+  }
+
+  &-sep {
+    color: var(--color-primary-lightest);
+  }
+
+  &-target {
+    color: var(--color-black);
+    font-weight: var(--font-medium);
+  }
+}

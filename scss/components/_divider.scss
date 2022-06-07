@@ -1,0 +1,17 @@
+:root {
+  --divider-width: 3.75rem;
+}
+.opp-divider {
+  display: grid;
+  grid-template-columns: var(--divider-width) 1fr;
+  width: 100%;
+  margin: var(--space-lg) 0;
+
+  &::before {
+    content: "";
+    display: block;
+    width: var(--divider-width);
+    height: 5px;
+    background: var(--color-secondary);
+  }
+}

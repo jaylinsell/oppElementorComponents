@@ -182,3 +182,15 @@
   }
 }
 
+/*
+* Elementor overrides
+*/
+
+.elementor-widget-home-user-directory,
+.elementor-widget-page-directory {
+  &,
+  .elementor-widget-container,
+  .card {
+    height: 100%;
+  }
+}
