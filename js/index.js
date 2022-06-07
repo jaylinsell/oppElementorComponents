@@ -9,7 +9,3 @@ window.addEventListener('DOMContentLoaded', () => {
   // set a loading state to all video playlists until the applyPlaylistUpdates func is called
   if (document.querySelector('.elementor-widget-video-playlist')) applyPlaylistUpdates()
 })
-
-// window.onload = () => {
-//   // For the videos, we need to wait until the elementor JS has also loaded, not just the dom elements, so we use the onload func instead
-// }
