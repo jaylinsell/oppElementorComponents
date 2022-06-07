@@ -36,3 +36,16 @@ pnpm dev
 ```
 pnpm build
 ```
+
+## Go Live Checklist
+The following files need to be deployed after pnpm build:
+ Current Direcotry (uploaded to /{{child-theme}}/opp-components:
+ - **All and only the .php files**
+
+ Parent Directory (Files will be compbiled here) uploaded to /{{child-theme}} :
+ - **js folder**
+ - **scss folder**
+ - **home.{{has}}.svg** - check CLI log for hash vesrion.
+
+
+
