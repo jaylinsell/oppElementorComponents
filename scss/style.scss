@@ -47,6 +47,7 @@ Template Id: prod-15696
 @import 'components/anchor';
 @import 'components/sticky';
 @import 'components/callout';
+@import 'components/video';
 // ! ...additional components
 
 /*
@@ -65,3 +66,4 @@ html body select.orderby {
 // # Additional overrides
 // Remove overflow so we can utilise position sticky.
 body .site { overflow: initial; }
+html body:not(.page-template-fullwidth-content) .site-content { margin-bottom: 0; }

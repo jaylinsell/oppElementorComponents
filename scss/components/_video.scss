@@ -1,0 +1,121 @@
+:root {
+  --video-bg: var(--color-secondary-lightest);
+  --shadow-rgb: 85 182 187;
+}
+
+%baseStyles {
+  padding: var(--space-md);
+  background: var(--video-bg);
+}
+
+// These are mostly elementor overrides
+.elementor-widget-video-playlist.has-bg {
+  --video-bg: var(--color-white);
+  --shadow-rgb: 200 200 200;
+}
+
+body .elementor-widget-video-playlist .e-tabs {
+
+  &-main-area {
+    @include breakpoint(sm, 'not all') {
+      flex-direction: column;
+    }
+  }
+
+  // video wrapper
+  &-content-wrapper {
+    @extend %baseStyles;
+
+    @include breakpoint(sm) {
+      border-top-left-radius: var(--radius-lg);
+      border-top-right-radius: var(--radius-lg);
+    }
+
+    @include breakpoint(sm, 'not all') {
+      aspect-ratio: 16/9;
+    }
+  }
+
+  // video playlist thumbs
+  &-wrapper {
+    @include breakpoint(sm, 'not all') {
+      background-color: var(--video-bg);
+      border-top-left-radius: var(--radius-lg);
+      border-top-right-radius: var(--radius-lg);
+
+      .shadow {
+        &-top { background: linear-gradient(0deg,transparent, rgb(var(--shadow-rgb) / 20%)); }
+        &-bottom { background: linear-gradient(180deg,transparent, rgb(var(--shadow-rgb) / 20%)); }
+      }
+    }
+
+    @include breakpoint(sm) {
+      .shadow {
+        &-top,
+        &-bottom { display: none; }
+      }
+    }
+
+  }
+
+  &-header,
+  &-items-wrapper { background: none; }
+
+  &-header { border-bottom: 0; }
+
+  &-items-wrapper {
+    .e-tab-title {
+      background-color: transparent;
+
+      .e-tab-title-text {
+        font-weight: var(--font-medium)!important;
+      }
+
+      &.e-active,
+      &:hover {
+        background-color: var(--video-bg);
+        box-shadow: inset 20px 0px 20px -20px rgb(var(--shadow-rgb) / 50%);
+        border-top-right-radius: var(--radius-md);
+        border-bottom-right-radius: var(--radius-md);
+
+        .e-tab-title-text a { color: var(--color-black)!important; }
+      }
+
+      &:hover:not(.e-active) {
+        --video-bg: var(--color-grey-lightest);
+        --shadow-rgb: 150 150 150;
+      }
+    }
+  }
+
+  // Content under video
+  &-inner-tabs {
+    @include breakpoint(sm) {
+      width: calc(100% - 33%);
+    }
+
+    .e-tab-mobile-title { display: none!important; }
+
+    .e-inner-tabs{
+      &-wrapper { display: none; }
+      &-content-wrapper {
+        &, .e-inner-tab-content {
+          padding: 0!important;
+          border: none!important;
+        }
+      }
+    }
+
+    .e-tab-content {
+      @extend %baseStyles;
+      padding-top: 0;
+      padding-bottom: var(--space-sm);
+
+      border-bottom-left-radius: var(--radius-lg);
+      border-bottom-right-radius: var(--radius-lg);
+
+      h1, h2, h3, h4, h5, h6 { margin-top: 0; }
+    }
+  }
+}
+

@@ -42,6 +42,7 @@
     &--child { padding-left: var(--space-md); }
     &--active {
       color: var(--color-black);
+      font-weight: var(--font-bold)!important;
     }
   }
 }

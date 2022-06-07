@@ -22,9 +22,11 @@
 .btn.btn {
   &--primary,
   &--secondary {
-    // purposely left without fallbacks so they inherit the themes colours
-    background: var(--btn-bg);
-    color: var(--btn-color);
+    & {
+      // purposely left without fallbacks so they inherit the themes colours
+      background: var(--btn-bg);
+      color: var(--btn-color);
+    }
 
     @extend %chevronGrid;
     text-align: left;
@@ -55,8 +57,13 @@
       }
     }
 
-    &:hover .chevron {
-      transform: translate(var(--chevron-translate)) rotate(var(--chevron-rotation));
+    &:hover {
+      --btn-color: var(--color-primary);
+      color: var(--btn-color);
+
+      .chevron {
+        transform: translate(var(--chevron-translate)) rotate(var(--chevron-rotation));
+      }
     }
   }
 
