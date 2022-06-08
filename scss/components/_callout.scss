@@ -37,11 +37,11 @@
     @include breakpoint(md2) { --link-grid: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); }
 
     a {
-      @include breakpoint(xs, 'not all') { @include lastRow(3) { border-bottom: none; } }
+      @include breakpoint(xs, 'not all') { @include lastRowLink(3) { border-bottom: none; } }
       @include breakpoint(xs) {
-        @include breakpoint(md2, 'not all') { @include lastRow(2) { border-bottom: none; } }
+        @include breakpoint(md2, 'not all') { @include lastRowLink(2) { border-bottom: none; } }
       }
-      @include breakpoint(md2) { @include lastRow(3) { border-bottom: none; } }
+      @include breakpoint(md2) { @include lastRowLink(3) { border-bottom: none; } }
     }
   }
 }

@@ -12,6 +12,10 @@
     grid-template-columns: var(--link-grid);
   }
 
+  &--buttons {
+    --link-grid: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
   &--list {
     --link-grid: 1fr;
     --link-gap-v: var(--space-sm);

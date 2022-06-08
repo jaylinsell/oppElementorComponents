@@ -51,7 +51,7 @@ class HomeUserDirectory extends Widget_Base {
         'label_block' => true,
         'type' => Controls_Manager::TEXT,
         'placeholder' => __( 'Are you a...', 'elementor' ),
-        'description' => __( 'To force titles onto a new line, use <br />. Ie, "Are you \<br />a Police Officer"', 'elementor' ),
+        'description' => __( 'To force titles onto a new line, use &lt;br /&gt;. Ie, "Are you &lt;br /&gt;a Police Officer"', 'elementor' ),
       ]
     );
 

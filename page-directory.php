@@ -97,8 +97,7 @@ class PageDirectory extends Widget_Base {
         'type' => Controls_Manager::REPEATER,
         'fields' => $repeater->get_controls(),
         'default' => [
-          'label' => __('Victims of Crime', 'elementor'),
-          'url' => __('https://opp.vic.gov.au/victims-and-witnesses/#victims-of-crime', 'elementor'),
+          'label' => __('Label', 'elementor'),
         ],
         'title_field' => '{{{ label }}}'
       ]

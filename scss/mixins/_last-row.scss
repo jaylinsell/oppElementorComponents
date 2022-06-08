@@ -4,3 +4,11 @@
     @content;
   }
 }
+
+@mixin lastRowLink($count: 1) {
+  // above & is causing conflicts with the selectors on link rows, so have made one specifically for a tags
+  &:nth-child(#{$count}n + 1):nth-last-child(-n + #{$count}),
+  &:nth-child(#{$count}n + 1):nth-last-child(-n + #{$count}) ~ a {
+    @content;
+  }
+}

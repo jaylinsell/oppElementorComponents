@@ -31,7 +31,7 @@ class CalloutGeneric extends Widget_Base {
 			[
 				'label' => __( 'Callout Style', 'plugin-name' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => 'solid',
+				'default' => 'dashed',
 				'options' => [
 					'dashed'  => __( 'Dashed Border / General Info', 'elementor' ),
 					'success' => __( 'Success / Green', 'elementor' ),

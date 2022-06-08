@@ -101,7 +101,7 @@ class ButtonList extends Widget_Base {
             </article>';
 
     if ( $settings['links'] ) {
-      echo '<div class="links links--grid">';
+      echo '<div class="links links--grid links--buttons">';
         foreach (  $settings['links'] as $button ) {
             $icon = $button['icon']['value'];
 
