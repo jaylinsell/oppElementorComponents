@@ -141,7 +141,7 @@
 
   // alternating bg for home cards
   &--alternate {
-    --card-bg: var(--color-primary);
+    @include breakpoint(sm) { --card-bg: var(--color-primary); }
   }
 
   // page directory cards
